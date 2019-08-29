@@ -1,0 +1,27 @@
+<div class="row" [formGroup]="form">
+  <div class="col-6">
+    <app-text-input id="first-name" name="first-name" label="First Name" formControlName="firstName"
+      (blur)="onTouched()"
+    ></app-text-input>
+  </div>
+  <div class="col-6">
+    <app-text-input id="last-name" name="last-name" label="Last Name" formControlName="lastName"
+      (blur)="onTouched()"
+    ></app-text-input>
+  </div>
+  <div class="col-12">
+    <app-text-input id="email" name="email" label="Email" formControlName="email"
+      (blur)="onTouched()"
+    ></app-text-input>
+  </div>
+  <div class="col-6">
+    <app-text-input id="password" name="password" label="Password" formControlName="password"
+      (blur)="onTouched()"
+    ></app-text-input>
+  </div>
+  <div class="col-6">
+    <app-text-input id="password-repeat" name="password-repeat" label="Password repeat" formControlName="passwordRepeat"
+      (blur)="onTouched()"
+    ></app-text-input>
+  </div>
+</div>

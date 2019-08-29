@@ -1,0 +1,10 @@
+
+.text-input-label {
+
+
+  &.required {
+    &:after {
+      content: '*';
+    }
+  }
+}

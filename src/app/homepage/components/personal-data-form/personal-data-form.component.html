@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+
+  <div class="row mb-4">
+    <div class="col-12">
+      <app-personal-data-basic-control-group
+        formControlName="personalDataBasic"
+      ></app-personal-data-basic-control-group>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-12">
+      <app-address-control-group
+        id="registered-address"
+        formControlName="registeredAddress"
+      ></app-address-control-group>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 text-right">
+      <label for="same-address">Same as registered</label>&nbsp;
+      <input type="checkbox" id="same-address" name="same-address" formControlName="sameAddress">
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-12">
+      <app-address-control-group
+        id="residence-address"
+        formControlName="residenceAddress"
+      ></app-address-control-group>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-primary" (click)="onSubmitClick()">Submit</button>
+    </div>
+  </div>
+</form>
+
+
+<hr>
+<p class="mt -5">
+  {{ form.value | json }}
+</p>
+<p>
+  {{ form.status }}
+</p>

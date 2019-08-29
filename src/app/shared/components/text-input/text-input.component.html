@@ -1,0 +1,19 @@
+<div class="text-input mb-4">
+  <label [for]="id" class="mb-1 text-input-label" [ngClass]="{'required': isRequired}">{{ label }}</label>
+  <input
+    #input
+    [id]="id"
+    [name]="name"
+    type="text"
+    class="form-control mb-1"
+    [ngClass]="{'is-invalid': !!controlDir.errors && controlDir.touched, 'is-valid': !controlDir.errors && controlDir.touched}"
+    [disabled]="disabled"
+    (input)="onChange($event.target.value)"
+    (blur)="onTouched()"
+  >
+
+  <app-input-validation-error
+    [control]="controlDir"
+    [hidden]="!controlDir.touched"
+  ></app-input-validation-error>
+</div>
