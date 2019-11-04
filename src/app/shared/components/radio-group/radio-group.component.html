@@ -1,0 +1,18 @@
+<div class="radio-group">
+  <p>{{ label }}</p>
+  <div class="custom-control custom-radio custom-control-inline" *ngFor="let option of options">
+    <input
+      type="radio"
+      [id]="name + '-' + option.id"
+      [name]="name"
+      class="custom-control-input"
+      [checked]="option.value === checkedValue"
+      [disabled]="option.disabled"
+      (change)="onChange(option.value)"
+      (blur)="onTouched()"
+    >
+    <label class="custom-control-label" [for]="name + '-' + option.id">
+      {{ option.label }}
+    </label>
+  </div>
+</div>

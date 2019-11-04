@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -11,6 +11,12 @@ import { takeUntil } from 'rxjs/operators';
 export class PersonalDataFormComponent implements OnInit {
   form: FormGroup;
   destroy$ = new Subject();
+  colorOptions = [
+    {id: 'red', label: 'Red', value: 'red'},
+    {id: 'blue', label: 'Blue', value: 'blue'},
+    {id: 'yellow', label: 'Yellow', value: 'yellow'},
+    {id: 'pink', label: 'Pink', value: 'pink', disabled: true}
+  ];
 
   constructor(private fb: FormBuilder) {
   }
@@ -31,7 +37,8 @@ export class PersonalDataFormComponent implements OnInit {
       }),
       registeredAddress: this.fb.control(null),
       residenceAddress: this.fb.control(null),
-      sameAddress: this.fb.control(false)
+      sameAddress: this.fb.control(false),
+      favoriteColor: this.fb.control('blue')
     });
   }
 

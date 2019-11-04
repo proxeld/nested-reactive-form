@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { InputValidationErrorComponent } from './components/input-validation-error/input-validation-error.component';
 import { InterpolatePipe } from './pipes/interpolate.pipe';
+import { RadioGroupComponent } from './components/radio-group/radio-group.component';
 
 
 
@@ -11,10 +12,12 @@ import { InterpolatePipe } from './pipes/interpolate.pipe';
   declarations: [
     TextInputComponent,
     InputValidationErrorComponent,
-    InterpolatePipe
+    InterpolatePipe,
+    RadioGroupComponent
   ],
   exports: [
-    TextInputComponent
+    TextInputComponent,
+    RadioGroupComponent
   ],
   imports: [
     CommonModule,
